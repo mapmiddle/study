@@ -1,0 +1,11 @@
+version: '3.2'
+services:
+  redis:
+    container_name: redis
+    image: grokzen/redis-cluster:4.0.10
+    ports:
+      - "30001-30006:30001-30006"
+    environment:
+      - INITIAL_PORT=30001
+      - MASTERS=3
+      - SLAVES_PER_MASTER=1
